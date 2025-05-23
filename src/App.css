@@ -4,7 +4,11 @@
   text-align: center;
 }
 body {
-  background-color: rgb(10, 88, 10);
+  /* background-color: rgb(10, 88, 10); */
+  background-image: url('images/cardTable.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 button {
@@ -22,4 +26,32 @@ ul {
 .homeTitle {
   font-size: 2.5rem;
   color: rgb(117, 28, 28);
+}
+
+form {
+  color: antiquewhite;
+  font-weight: bold;
+  font-size: large;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: x-large;
+  font-weight: bolder;
+  color: orange;
+  border: 5px solid orange;
+  width: 50%;
+  margin: auto;
+}
+
+.gameTitle {
+  font-size: 3rem;
+  color: rgb(74, 14, 14);
+}
+
+.gameContainer {
+  color: blue;
+  font-size: 1rem;
+  font-weight: bold;
 }

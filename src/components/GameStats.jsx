@@ -1,6 +1,6 @@
 function GameStats({ balance, remainingCards }) {
   return (
-    <div>
+    <div className="stats">
       <div>
         Balance: <p>${balance}</p>
       </div>

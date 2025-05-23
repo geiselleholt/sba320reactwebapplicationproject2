@@ -164,8 +164,8 @@ export default function GamePage() {
   };
 
   return (
-    <div className="pageContainer">
-      <h2>Put Your Money Where Your Luck Is</h2>
+    <div className="gameContainer">
+      <h1 className="gameTitle">Put Your Money Where Your Luck Is</h1>
 
       <GameStats balance={balance} remainingCards={remainingCards} />
 

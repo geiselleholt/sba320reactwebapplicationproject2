@@ -21,7 +21,8 @@ Multiple Commits. 12-15 minimum
 ### If I had more time I would:
 - Improve CSS
 - Fix bugs:
-    - 
+    - error messages and alerts
+    - rendering / lifting of state
 - Instead of messages use gifs - maybe use gify api for random gifs
 - Have a high score stored in local memory
 - Make it so you can bet multiple ways at the same time

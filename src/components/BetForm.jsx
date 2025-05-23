@@ -33,7 +33,7 @@ function BetForm({
   ];
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <div>
         <label>Bet Amount:</label>
         <input
