@@ -3,7 +3,23 @@
   margin: 0 auto;
   text-align: center;
 }
+body {
+  background-color: rgb(10, 88, 10);
+}
 
-.pageContainer {
-  background-color: green;
+button {
+  background-color: brown;
+  color: wheat;
+  font-size: bold;
+  font-size: 1rem;
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.homeTitle {
+  font-size: 2.5rem;
+  color: rgb(117, 28, 28);
 }

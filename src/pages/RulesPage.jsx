@@ -48,6 +48,9 @@ function RulesPage() {
           </ul>
 
           <p>🍀 Good luck, 😁 Have fun, and 🫡 Play Responsibily!</p>
+          <p>If you have a gambling addiction, play this game as much as you want to scratch that itch.</p>
+          <p>Or reach out to:</p>
+          <a href="https://www.ncpgambling.org/help-treatment">800-GAMBLER</a>
         </div>
 
         <button onClick={() => navigate("/game")} className="backToGameButton">
