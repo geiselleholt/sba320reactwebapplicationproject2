@@ -19,6 +19,14 @@ button {
   margin: 10px;
 }
 
+button:hover {
+  font-size: 1.2rem;
+}
+
+.backToGameButton {
+  font-size: 1.2rem;
+}
+
 ul {
   list-style-type: none;
 }

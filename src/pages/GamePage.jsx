@@ -64,11 +64,11 @@ export default function GamePage() {
 
   const handleDrawCard = async () => {
     if (isGameOver) {
-      alert('Game Over! Click New Game to restart')
+      alert("Game Over! Click New Game to restart");
       return;
     }
     if (betAmount <= 0) {
-      alert('Bet amount must be greater than zero')
+      alert("Bet amount must be greater than zero");
       return;
     }
     if (betAmount > balance) {
@@ -139,8 +139,8 @@ export default function GamePage() {
         const winnings = win ? betAmount * payoutMultiplier : 0;
 
         const finalMessage = win
-          ? `WIINER!!!  The card was ${cardValue} of ${cardSuit}. You won $${winnings}!`
-          : `LOSER... The card was ${cardValue} of ${cardSuit}. You lost $${betAmount}.`;
+          ? `WINNER 💲💲💲  The card was ${cardValue} of ${cardSuit}. You won $${winnings}!`
+          : `LOSER 🤡  The card was ${cardValue} of ${cardSuit}. You lost $${betAmount}.`;
 
         dispatch({
           type: "DRAW_CARD",
@@ -168,28 +168,26 @@ export default function GamePage() {
       <h1 className="gameTitle">Risk & Reveal</h1>
 
       <GameStats balance={balance} remainingCards={remainingCards} />
-<div className="playContainer">
-      <BetForm
-        betAmount={betAmount}
-        betType={betType}
-        betValue={betValue}
-        balance={balance}
-        remainingCards={remainingCards}
-        isLoading={isLoading}
-        isGameOver={isGameOver}
-        dispatch={dispatch}
-        onSubmit={handleDrawCard}
-      />
+      <div className="playContainer">
+        <BetForm
+          betAmount={betAmount}
+          betType={betType}
+          betValue={betValue}
+          balance={balance}
+          remainingCards={remainingCards}
+          isLoading={isLoading}
+          isGameOver={isGameOver}
+          dispatch={dispatch}
+          onSubmit={handleDrawCard}
+        />
 
-      <DisplayCard drawnCard={drawnCard} />
+        <DisplayCard drawnCard={drawnCard} />
       </div>
-            <div>
+      <div>
         <button onClick={startNewGame} disabled={isLoading}>
           New Game
         </button>
-        <button onClick={() => navigate("/rules")}>
-          Rules
-        </button>
+        <button onClick={() => navigate("/rules")}>Rules</button>
       </div>
 
       <p>
@@ -197,6 +195,6 @@ export default function GamePage() {
           ? "Game Over! Your balance reached zero. Click 'New Game' to restart."
           : message}
       </p>
-      </div>
+    </div>
   );
 }

@@ -242,7 +242,7 @@ function BetForm({
                 isLoading || remainingCards === 0 || isGameOver || balance <= 0
               }
             >
-              <option value="">Select Rank</option>
+              <option value="">Select Type</option>
               {ranks.map((rank) => (
                 <option key={rank} value={rank}>
                   {rank}

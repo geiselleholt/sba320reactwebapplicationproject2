@@ -5,11 +5,11 @@ function RulesPage() {
 
   return (
     <>
-      <div className="pageContainer">
-        <h2 className="rulesTitle">Game Rules & Payouts</h2>
-        <div className="rulesContent">
-          <h3 className="rulesSubtitle">Rules:</h3>
-          <ul className="rulesList">
+      <div>
+        <h2>Game Rules & Payouts</h2>
+        <div>
+          <h3>Rules:</h3>
+          <ul>
             <li>You start with a balance of $100</li>
             <li>
               Your goal is to increase your balance by betting on the next card
@@ -24,23 +24,24 @@ function RulesPage() {
             </li>
           </ul>
 
-          <h3 className="rulesSubtitle">How to Play:</h3>
-          <ul className="rulesList">
+          <h3>How to Play:</h3>
+          <ul>
             <li>Enter your desired Bet Amount</li>
             <li>Select a Bet Type ex: Red or Black, Face Card</li>
             <li>
-              Select a specific Bet Value based on your chosen type ex:"RED", "YES", "HEARTS", "ACE"
+              Select a specific Bet Value based on your chosen type ex:"RED",
+              "YES", "HEARTS", "ACE"
             </li>
             <li>
               Click "Draw Card" to reveal the next card and see if you won!
             </li>
           </ul>
 
-          <h3 className="rulesSubtitle">Payouts:</h3>
+          <h3>Payouts:</h3>
           <p>
             Payouts are proportional to the odds of winning in each category:
           </p>
-          <ul className="payoutsList">
+          <ul>
             <li>Red or Black: 2x your bet</li>
             <li>Face Card: 4x your bet</li>
             <li>Specific Suit: 4x your bet</li>
@@ -48,7 +49,10 @@ function RulesPage() {
           </ul>
 
           <p>🍀 Good luck, 😁 Have fun, and 🫡 Play Responsibily!</p>
-          <p>If you have a gambling addiction, play this game as much as you want to scratch that itch.</p>
+          <p>
+            If you have a gambling addiction, play this game as much as you want
+            to scratch that itch.
+          </p>
           <p>Or reach out to:</p>
           <a href="https://www.ncpgambling.org/help-treatment">800-GAMBLER</a>
         </div>
