@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -8,20 +7,17 @@ function HomePage() {
     <div className="pageContainer">
       <h1 className="homeTitle">Risk & Reveal</h1>
       <p className="homeParagraph">
-        Test your luck and intuition! Bet on the next card drawn and watch your balance grow... or shrink!
+        Test your luck and intuition! Bet on the next card drawn and watch your
+        balance grow... or shrink!
       </p>
-      <button onClick={() => navigate('/game')} className="startButtonHome">
+      <button onClick={() => navigate("/game")} className="startButtonHome">
         Start Game
       </button>
-      <button onClick={() => navigate('/rules')} className="rulesButtonHome baseButton"> {/* New Rules Button */}
-          Rules
-        </button>
+      <button onClick={() => navigate("/rules")} className="rulesButtonHome">
+        Rules
+      </button>
     </div>
   );
 }
 
-
 export default HomePage;
-
-
-
