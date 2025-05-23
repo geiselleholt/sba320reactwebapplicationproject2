@@ -14,7 +14,7 @@ function BetForm({
     onSubmit();
   };
 
-  const suits = ["HEARTS", "DIAMONDS", "CLUBS", "SPADES"];
+  const suits = ["❤️HEARTS", "♦️DIAMONDS", "♣️CLUBS", "♠️SPADES"];
 
   const ranks = [
     "ACE",
@@ -46,7 +46,7 @@ function BetForm({
               payload: parseInt(e.target.value) || 0,
             })
           }
-          min='0'
+          min="0"
           max={balance}
           disabled={
             isLoading || remainingCards === 0 || isGameOver || balance <= 0

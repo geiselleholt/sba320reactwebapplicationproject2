@@ -64,24 +64,15 @@ export default function GamePage() {
 
   const handleDrawCard = async () => {
     if (isGameOver) {
-      dispatch({
-        type: "SET_MESSAGE",
-        payload: "Game Over! Click 'New Game' to restart.",
-      });
+      alert('Game Over! Click New Game to restart')
       return;
     }
     if (betAmount <= 0) {
-      dispatch({
-        type: "SET_MESSAGE",
-        payload: "Bet amount must be greater than zero.",
-      });
+      alert('Bet amount must be greater than zero')
       return;
     }
     if (betAmount > balance) {
-      dispatch({
-        type: "SET_MESSAGE",
-        payload: "Bet amount cannot be more than your balance.",
-      });
+      alert("Bet amount cannot be more than your balance");
       return;
     }
 
@@ -94,10 +85,7 @@ export default function GamePage() {
     }
 
     if (remainingCards === 0) {
-      dispatch({
-        type: "SET_MESSAGE",
-        payload: "You went throught the whole deck! Start a new game.",
-      });
+      alert("You went throught the whole deck! Start a new game.");
       return;
     }
 
@@ -134,7 +122,7 @@ export default function GamePage() {
             win =
               (betValue === "YES" && isFaceCard) ||
               (betValue === "NO" && !isFaceCard);
-            payoutMultiplier = isFaceCard ? 4 : 52 / 40;
+            payoutMultiplier = isFaceCard ? 4 : 0;
             break;
           case "suit":
             win = betValue === cardSuit;
@@ -151,8 +139,8 @@ export default function GamePage() {
         const winnings = win ? betAmount * payoutMultiplier : 0;
 
         const finalMessage = win
-          ? `You won! The card was ${cardValue} of ${cardSuit}. You won $${winnings}!`
-          : `You lost. The card was ${cardValue} of ${cardSuit}. You lost $${betAmount}.`;
+          ? `The card was ${cardValue} of ${cardSuit}. You won $${winnings}!`
+          : `The card was ${cardValue} of ${cardSuit}. You lost $${betAmount}.`;
 
         dispatch({
           type: "DRAW_CARD",
