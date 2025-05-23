@@ -5,15 +5,19 @@ function RulesPage() {
 
   return (
     <>
-      <div>
+      <div className="rules">
         <h2>Game Rules & Payouts</h2>
         <div>
           <h3>Rules:</h3>
           <ul>
             <li>You start with a balance of $100</li>
             <li>
-              Your goal is to increase your balance by betting on the next card
-              drawn from a standard 52-card deck
+              Your goal is to get thru the entire deck without busting your
+              bank.
+            </li>
+            <li>
+              Try to increase your balance by betting on the next card drawn
+              from a standard 52-card deck
             </li>
             <li>
               Each time you draw a card, one card is removed from the deck.
@@ -48,7 +52,7 @@ function RulesPage() {
             <li>Specific Card: 13x your bet</li>
           </ul>
 
-          <p>🍀 Good luck, 😁 Have fun, and 🫡 Play Responsibily!</p>
+          <p>🍀 Good luck 😁 Have fun and 🫡 Play Responsibily!</p>
           <p>
             If you have a gambling addiction, play this game as much as you want
             to scratch that itch.

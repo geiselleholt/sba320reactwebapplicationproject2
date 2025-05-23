@@ -63,18 +63,18 @@ export default function GamePage() {
   }, [deckId, isGameOver, shuffleDeck]);
 
   const handleDrawCard = async () => {
-    if (isGameOver) {
-      alert("Game Over! Click New Game to restart");
-      return;
-    }
-    if (betAmount <= 0) {
-      alert("Bet amount must be greater than zero");
-      return;
-    }
-    if (betAmount > balance) {
-      alert("Bet amount cannot be more than your balance");
-      return;
-    }
+    // if (isGameOver) {
+    //   alert("Game Over! Click New Game to restart");
+    //   return;
+    // }
+    // if (betAmount <= 0) {
+    //   alert("Bet amount must be greater than zero");
+    //   return;
+    // }
+    // if (betAmount > balance) {
+    //   alert("Bet amount cannot be more than your balance");
+    //   return;
+    // }
 
     if (!betType || !betValue) {
       dispatch({
@@ -85,7 +85,7 @@ export default function GamePage() {
     }
 
     if (remainingCards === 0) {
-      alert("You went throught the whole deck! Start a new game.");
+      alert("Congradulations 🥳🥳🥳 You went throught the whole deck! Start a new game and do it again");
       return;
     }
 
@@ -122,7 +122,7 @@ export default function GamePage() {
             win =
               (betValue === "YES" && isFaceCard) ||
               (betValue === "NO" && !isFaceCard);
-            payoutMultiplier = isFaceCard ? 4 : 0;
+            payoutMultiplier = 4;
             break;
           case "suit":
             win = betValue === cardSuit;
