@@ -1,3 +1,24 @@
-export default function HomePage() {
-    return <h1>HomePage</h1>
+import { useNavigate } from 'react-router-dom';
+
+
+function HomePage() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="pageContainer">
+      <h1 className="homeTitle">Risk & Reveal</h1>
+      <p className="homeParagraph">
+        Test your luck and intuition! Bet on the next card drawn and watch your balance grow... or shrink!
+      </p>
+      <button onClick={() => navigate('/game')} className="startButtonHome">
+        Start Game
+      </button>
+    </div>
+  );
 }
+
+
+export default HomePage;
+
+
+
