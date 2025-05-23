@@ -13,6 +13,9 @@ function HomePage() {
       <button onClick={() => navigate('/game')} className="startButtonHome">
         Start Game
       </button>
+      <button onClick={() => navigate('/rules')} className="rulesButtonHome baseButton"> {/* New Rules Button */}
+          Rules
+        </button>
     </div>
   );
 }

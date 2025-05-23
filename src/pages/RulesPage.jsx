@@ -8,25 +8,28 @@ function RulesPage() {
       <div className="pageContainer">
         <h2 className="rulesTitle">Game Rules & Payouts</h2>
         <div className="rulesContent">
-          <p>
-            Welcome to the Card Bet Challenge! You start with a balance of $100.
-          </p>
-          <p>
-            Your goal is to increase your balance by betting on the next card
-            drawn from a standard 52-card deck.
-          </p>
-          <p>
-            Each time you draw a card, one card is removed from the deck. When
-            the deck runs out, you can start a new game.
-          </p>
+          <h3 className="rulesSubtitle">Rules:</h3>
+          <ul className="rulesList">
+            <li>You start with a balance of $100</li>
+            <li>
+              Your goal is to increase your balance by betting on the next card
+              drawn from a standard 52-card deck
+            </li>
+            <li>
+              Each time you draw a card, one card is removed from the deck.
+            </li>
+            <li>
+              As the deck runs out, if you have a good memory, you'll have a
+              better chance of guessing the next card.
+            </li>
+          </ul>
 
           <h3 className="rulesSubtitle">How to Play:</h3>
           <ul className="rulesList">
             <li>Enter your desired Bet Amount</li>
             <li>Select a Bet Type ex: Red or Black, Face Card</li>
             <li>
-              Select a specific Bet Value based on your chosen type ex:"RED",
-              "YES", "HEARTS", "ACE"
+              Select a specific Bet Value based on your chosen type ex:"RED", "YES", "HEARTS", "ACE"
             </li>
             <li>
               Click "Draw Card" to reveal the next card and see if you won!
