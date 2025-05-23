@@ -8,7 +8,7 @@ function HomePage() {
       <h1 className="homeTitle">Risk & Reveal</h1>
       <p className="homeParagraph">
         Test your luck and intuition! Bet on the next card drawn and watch your
-        balance grow... or shrink!
+        money grow 🤑... or watch it fly away💸!
       </p>
       <button onClick={() => navigate("/game")} className="startButtonHome">
         Start Game

@@ -42,7 +42,7 @@ export default function gameReducer(state, action) {
         isGameOver: newBalance <= 0,
         message:
           newBalance <= 0
-            ? "Game Over! Your balance reached zero."
+            ? "Game Over! You Busted Your Bank 💸"
             : state.message,
       };
     case "DRAW_CARD":
@@ -65,6 +65,6 @@ export default function gameReducer(state, action) {
     case "RESET_GAME":
       return initialGameState;
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      return state;
   }
 }
