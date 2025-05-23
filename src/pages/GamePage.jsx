@@ -165,10 +165,10 @@ export default function GamePage() {
 
   return (
     <div className="gameContainer">
-      <h1 className="gameTitle">Put Your Money Where Your Luck Is</h1>
+      <h1 className="gameTitle">Risk & Reveal</h1>
 
       <GameStats balance={balance} remainingCards={remainingCards} />
-
+<div className="playContainer">
       <BetForm
         betAmount={betAmount}
         betType={betType}
@@ -181,7 +181,9 @@ export default function GamePage() {
         onSubmit={handleDrawCard}
       />
 
-      <div>
+      <DisplayCard drawnCard={drawnCard} />
+      </div>
+            <div>
         <button onClick={startNewGame} disabled={isLoading}>
           New Game
         </button>
@@ -195,7 +197,6 @@ export default function GamePage() {
           ? "Game Over! Your balance reached zero. Click 'New Game' to restart."
           : message}
       </p>
-      <DisplayCard drawnCard={drawnCard} />
-    </div>
+      </div>
   );
 }

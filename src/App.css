@@ -5,7 +5,7 @@
 }
 body {
   /* background-color: rgb(10, 88, 10); */
-  background-image: url('images/cardTable.png');
+  background-image: url("images/cardTable.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -32,6 +32,9 @@ form {
   color: antiquewhite;
   font-weight: bold;
   font-size: large;
+  border: 5px solid darkgreen;
+  width: 50%;
+  margin: auto;
 }
 
 .stats {
@@ -39,7 +42,7 @@ form {
   justify-content: space-around;
   font-size: x-large;
   font-weight: bolder;
-  color: orange;
+  color: rgb(232, 193, 119);
   border: 5px solid orange;
   width: 50%;
   margin: auto;
@@ -48,10 +51,36 @@ form {
 .gameTitle {
   font-size: 3rem;
   color: rgb(74, 14, 14);
+  background-color: bisque;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .gameContainer {
-  color: blue;
+  color: rgb(190, 190, 234);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.betContainer {
+  color: darkgreen;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.betAmount {
+  font-size: 1.5rem;
+}
+
+form input {
+  padding: 10px;
+  margin: 20px;
+}
+
+.playContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
 }

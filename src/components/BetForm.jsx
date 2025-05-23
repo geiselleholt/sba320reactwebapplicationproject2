@@ -35,7 +35,7 @@ function BetForm({
   return (
     <form onSubmit={handleSubmit} className="form">
       <div>
-        <label>Bet Amount:</label>
+        <label className="betAmount">Bet Amount:</label>
         <input
           type="number"
           id="betAmount"
@@ -88,7 +88,7 @@ function BetForm({
             />
           </label>
           <label>
-            Specific Suit
+            Suit
             <input
               type="radio"
               name="betType"
@@ -103,7 +103,7 @@ function BetForm({
             />
           </label>
           <label>
-            Specific Rank
+            Type
             <input
               type="radio"
               name="betType"
