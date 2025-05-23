@@ -15,12 +15,25 @@ export default function GamePage() {
     drawnCard: null,
     betAmount: 10,
     message: "",
+    betType: "",
+    betValue: "",
+    isLoading: false,
     isGameOver: false,
   };
 
   const [state, dispatch] = useReducer(gameReducer, initialGameState);
-  const { balance, deckId, remainingCards, drawnCard, betAmount, isGameOver } =
-    state;
+  const {
+    balance,
+    deckId,
+    remainingCards,
+    drawnCard,
+    betAmount,
+    betType,
+    betValue,
+    message,
+    isLoading,
+    isGameOver,
+  } = state;
 
   const shuffleDeck = useCallback(async () => {
     dispatch({
@@ -38,6 +51,8 @@ export default function GamePage() {
       });
     } catch (err) {
       console.error(err);
+    } finally {
+      dispatch({ type: "STOP_LOADING" });
     }
   }, []);
 
@@ -55,6 +70,28 @@ export default function GamePage() {
       });
       return;
     }
+    if (betAmount <= 0) {
+      dispatch({
+        type: "SET_MESSAGE",
+        payload: "Bet amount must be greater than zero.",
+      });
+      return;
+    }
+    if (betAmount > balance) {
+      dispatch({
+        type: "SET_MESSAGE",
+        payload: "Bet amount cannot be more than your balance.",
+      });
+      return;
+    }
+
+    if (!betType || !betValue) {
+      dispatch({
+        type: "SET_MESSAGE",
+        payload: "Please select a bet type AND value.",
+      });
+      return;
+    }
 
     if (remainingCards === 0) {
       dispatch({
@@ -63,6 +100,8 @@ export default function GamePage() {
       });
       return;
     }
+
+    dispatch({ type: "PLACE_BET", payload: { amount: betAmount } });
 
     dispatch({
       type: "START_LOADING",
@@ -77,11 +116,51 @@ export default function GamePage() {
 
       if (data.success && data.cards.length > 0) {
         const card = data.cards[0];
+        let win = false;
+        let payoutMultiplier = 0;
+
+        const cardValue = card.value;
+        const cardSuit = card.suit;
+        const cardColor =
+          cardSuit === "HEARTS" || cardSuit === "DIAMONDS" ? "RED" : "BLACK";
+        const isFaceCard = ["JACK", "QUEEN", "KING"].includes(cardValue);
+
+        switch (betType) {
+          case "color":
+            win = betValue === cardColor;
+            payoutMultiplier = 2;
+            break;
+          case "face":
+            win =
+              (betValue === "YES" && isFaceCard) ||
+              (betValue === "NO" && !isFaceCard);
+            payoutMultiplier = isFaceCard ? 4 : 52 / 40;
+            break;
+          case "suit":
+            win = betValue === cardSuit;
+            payoutMultiplier = 4;
+            break;
+          case "rank":
+            win = betValue === cardValue;
+            payoutMultiplier = 13;
+            break;
+          default:
+            win = false;
+        }
+
+        const winnings = win ? betAmount * payoutMultiplier : 0;
+
+        const finalMessage = win
+          ? `You won! The card was ${cardValue} of ${cardSuit}. You won $${winnings}!`
+          : `You lost. The card was ${cardValue} of ${cardSuit}. You lost $${betAmount}.`;
+
         dispatch({
           type: "DRAW_CARD",
           payload: {
             card,
             remaining: data.remaining,
+            winnings,
+            message: finalMessage,
           },
         });
       }
@@ -97,14 +176,38 @@ export default function GamePage() {
   };
 
   return (
-    <>
-      <h2 className="gameTitle">Risk & Reveal</h2>
-      <BetForm />
-      <DisplayCard drawnCard={drawnCard} />
-      <GameStats />
-      <button onClick={() => {handleDrawCard}}>Draw</button>
+    <div className="pageContainer">
+      <h2>Put Your Money Where Your Luck Is</h2>
 
-      <button onClick={() => navigate("/rules")}>Rules</button>
-    </>
+      <GameStats balance={balance} remainingCards={remainingCards} />
+
+      <BetForm
+        betAmount={betAmount}
+        betType={betType}
+        betValue={betValue}
+        balance={balance}
+        remainingCards={remainingCards}
+        isLoading={isLoading}
+        isGameOver={isGameOver}
+        dispatch={dispatch}
+        onSubmit={handleDrawCard}
+      />
+
+      <div>
+        <button onClick={startNewGame} disabled={isLoading}>
+          New Game
+        </button>
+        <button onClick={() => navigate("/rules")}>
+          Rules
+        </button>
+      </div>
+
+      <p>
+        {isGameOver && balance <= 0
+          ? "Game Over! Your balance reached zero. Click 'New Game' to restart."
+          : message}
+      </p>
+      <DisplayCard drawnCard={drawnCard} />
+    </div>
   );
 }

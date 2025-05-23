@@ -1,8 +1,13 @@
-function GameStats() {
+function GameStats({ balance, remainingCards }) {
   return (
-    <>
-      <h1>GameStats</h1>
-    </>
+    <div>
+      <div>
+        Balance: <p>${balance}</p>
+      </div>
+      <div>
+        Cards Left: <p>{remainingCards}</p>
+      </div>
+    </div>
   );
 }
 
