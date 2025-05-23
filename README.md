@@ -21,6 +21,7 @@ Multiple Commits. 12-15 minimum
 ### If I had more time I would:
 - Improve CSS
 - Fix bugs:
+    - 
 - Instead of messages use gifs - maybe use gify api for random gifs
 - Have a high score stored in local memory
 - Make it so you can bet multiple ways at the same time
@@ -32,5 +33,7 @@ Multiple Commits. 12-15 minimum
 ### Things I'm proud of:
 - Not giving up... because I came close
 - Getting so much done in one day
-- Figuring out how and why to use useCallback
-- 
+
+### Acknowledgments:
+- Google / Bing / StackOverflow for looking up errors and example code
+- https://deckofcardsapi.com/ for card data

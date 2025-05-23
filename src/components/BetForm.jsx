@@ -14,7 +14,7 @@ function BetForm({
     onSubmit();
   };
 
-  const suits = ["❤️HEARTS", "♦️DIAMONDS", "♣️CLUBS", "♠️SPADES"];
+  const suits = ["HEARTS", "DIAMONDS", "CLUBS", "SPADES"];
 
   const ranks = [
     "ACE",
@@ -206,7 +206,7 @@ function BetForm({
           {betType === "suit" && (
             <div>
               {suits.map((suit) => (
-                <label key={suit}>
+                <label key={suit}>{suit}
                   <input
                     type="radio"
                     name="betValue"
@@ -226,6 +226,7 @@ function BetForm({
                       balance <= 0
                     }
                   />
+                  
                 </label>
               ))}
             </div>
