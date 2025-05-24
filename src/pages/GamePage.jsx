@@ -139,8 +139,8 @@ export default function GamePage() {
         const winnings = win ? betAmount * payoutMultiplier : 0;
 
         const finalMessage = win
-          ? `WINNER 💲💲💲  The card was ${cardValue} of ${cardSuit}. You won $${winnings}!`
-          : `LOSER 🤡  The card was ${cardValue} of ${cardSuit}. You lost $${betAmount}.`;
+          ? `💲💲WINNER 💲💲 The card was ${cardValue} of ${cardSuit}. You won $${winnings}!`
+          : `❌❌ LOSER ❌❌  The card was ${cardValue} of ${cardSuit}. You lost $${betAmount}.`;
 
         dispatch({
           type: "DRAW_CARD",

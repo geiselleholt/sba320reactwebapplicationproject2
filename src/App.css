@@ -1,16 +1,15 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
 }
 body {
-  /* background-image: url("images/cardTable6.png"); */
   background-color: rgb(2, 51, 2);
   background: radial-gradient(rgb(3, 70, 3), rgb(1, 28, 1));
   background-color: grag;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+  color: antiquewhite;
 }
 
 button {
@@ -39,7 +38,7 @@ ul {
 
 .homeTitle {
   font-size: 2.5rem;
-  color: rgb(117, 28, 28);
+  color: rgb(120, 33, 33);
 }
 
 form {
@@ -101,8 +100,26 @@ form input {
 
 .rules {
 color: antiquewhite;
+display: flex;
+justify-content: space-around;
+width: 100%;
+}
+
+.rules li {
+  margin: 10px;
 }
 
 a {
   color: antiquewhite;
+}
+
+.rulesTitle {
+  color: brown;
+  font-size: 2rem;
+}
+
+.rulesLowerSection {
+  color: rgb(171, 70, 70);
+  font-size: 1.25rem;
+  font-weight: bold;
 }
