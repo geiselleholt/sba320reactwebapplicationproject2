@@ -116,12 +116,12 @@ a {
 
 .rulesLowerSection {
   color: rgb(171, 70, 70);
-  font-size: .75rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
 .betTitle, .chooseValue {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-decoration: underline;
   margin-bottom: 0px;
 }
