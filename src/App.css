@@ -3,12 +3,7 @@
   text-align: center;
 }
 body {
-  background-color: rgb(2, 51, 2);
   background: radial-gradient(rgb(3, 70, 3), rgb(1, 28, 1));
-  background-color: grag;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
   color: antiquewhite;
 }
 
@@ -37,14 +32,14 @@ ul {
 }
 
 .homeTitle {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: rgb(120, 33, 33);
 }
 
 form {
   color: antiquewhite;
   font-weight: bold;
-  font-size: large;
+  font-size: medium;
   border: 5px solid antiquewhite;
   width: 60%;
   margin: auto;
@@ -53,7 +48,7 @@ form {
 .stats {
   display: flex;
   justify-content: space-around;
-  font-size: x-large;
+  font-size: large;
   font-weight: bolder;
   color: rgb(232, 193, 119);
   border: 5px solid orange;
@@ -73,17 +68,17 @@ form {
 
 .gameContainer {
   color: rgb(190, 190, 234);
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
 .betContainer {
-  font-size: 1rem;
+  font-size: .75rem;
   font-weight: bold;
 }
 
 .betAmount {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 form input {
@@ -96,7 +91,7 @@ form input {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 20px;
-  width: 80%;
+  width: 60%;
 }
 
 .rules {
@@ -116,22 +111,31 @@ a {
 
 .rulesTitle {
   color: brown;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .rulesLowerSection {
   color: rgb(171, 70, 70);
-  font-size: 1.25rem;
+  font-size: .75rem;
   font-weight: bold;
 }
 
 .betTitle, .chooseValue {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-decoration: underline;
   margin-bottom: 0px;
 }
 
 .suit input {
-  font-size: 1rem;
   margin: 10px;
+}
+
+.betTypeContainer input {
+  margin: 10px;
+}
+
+.drawCardButton {
+  background-color: rgb(190, 190, 234);
+  color: brown;
+  font-weight: bold;
 }

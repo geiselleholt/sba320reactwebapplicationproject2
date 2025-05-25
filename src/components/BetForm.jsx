@@ -56,7 +56,7 @@ function BetForm({
 
       <div >
         <h3 className="betTitle">Bet Type</h3>
-        <div>
+        <div className="betTypeContainer">
           <section>
           <label>
               Red or Black  (wins 2x bet amount)
@@ -275,6 +275,7 @@ function BetForm({
             remainingCards === 0 ||
             isGameOver
           }
+          className="drawCardButton"
         >
           {isLoading ? "Drawing..." : "Draw Card"}
         </button>
