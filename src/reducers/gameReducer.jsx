@@ -61,7 +61,6 @@ export default function gameReducer(state, action) {
       return { ...state, betType: action.payload, betValue: "" };
     case "SET_BET_VALUE":
       return { ...state, betValue: action.payload };
-
     case "RESET_GAME":
       return initialGameState;
     default:

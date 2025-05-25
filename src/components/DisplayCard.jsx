@@ -12,7 +12,7 @@ function DisplayCard({ drawnCard }) {
           src={drawnCard.image}
           alt={`${drawnCard.value} of ${drawnCard.suit}`}
           className="cardImage"
-          height={200}
+          height={300}
         />
       </div>
     </>

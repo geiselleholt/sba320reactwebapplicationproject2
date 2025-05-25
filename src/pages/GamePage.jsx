@@ -85,7 +85,9 @@ export default function GamePage() {
     }
 
     if (remainingCards === 0) {
-      alert("Congradulations 🥳🥳🥳 You went throught the whole deck! Start a new game and do it again");
+      alert(
+        "Congradulations 🥳🥳🥳 You went throught the whole deck without busting your bank! Start a new game and do it again"
+      );
       return;
     }
 
@@ -168,6 +170,11 @@ export default function GamePage() {
       <h1 className="gameTitle">Risk & Reveal</h1>
 
       <GameStats balance={balance} remainingCards={remainingCards} />
+      <p>
+        {isGameOver && balance <= 0
+          ? "Game Over! Your balance reached zero. Click 'New Game' to restart."
+          : message}
+      </p>
       <div className="playContainer">
         <BetForm
           betAmount={betAmount}
@@ -180,7 +187,6 @@ export default function GamePage() {
           dispatch={dispatch}
           onSubmit={handleDrawCard}
         />
-
         <DisplayCard drawnCard={drawnCard} />
       </div>
       <div>
@@ -189,12 +195,6 @@ export default function GamePage() {
         </button>
         <button onClick={() => navigate("/rules")}>Rules</button>
       </div>
-
-      <p>
-        {isGameOver && balance <= 0
-          ? "Game Over! Your balance reached zero. Click 'New Game' to restart."
-          : message}
-      </p>
     </div>
   );
 }

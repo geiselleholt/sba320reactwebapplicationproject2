@@ -43,7 +43,7 @@ function BetForm({
           onChange={(e) =>
             dispatch({
               type: "SET_BET_AMOUNT",
-              payload: parseInt(e.target.value) || 0,
+              payload: parseInt(e.target.value),
             })
           }
           min="0"
@@ -54,11 +54,12 @@ function BetForm({
         />
       </div>
 
-      <div>
-        <h3>Bet Type</h3>
+      <div >
+        <h3 className="betTitle">Bet Type</h3>
         <div>
+          <section>
           <label>
-            Red or Black
+              Red or Black  (wins 2x bet amount)
             <input
               type="radio"
               name="betType"
@@ -71,9 +72,11 @@ function BetForm({
                 isLoading || remainingCards === 0 || isGameOver || balance <= 0
               }
             />
-          </label>
+            </label>
+          </section>
+          <section>
           <label>
-            Face Card- K, Q, J
+            Face Card- K, Q, J (wins 4x bet amount)
             <input
               type="radio"
               name="betType"
@@ -87,8 +90,10 @@ function BetForm({
               }
             />
           </label>
+          </section>
+          <section>
           <label>
-            Suit
+            Card Suit (wins 4x bet amount)
             <input
               type="radio"
               name="betType"
@@ -102,8 +107,10 @@ function BetForm({
               }
             />
           </label>
+          </section>
+          <section>
           <label>
-            Type
+            Card Type (wins 13x bet amount)
             <input
               type="radio"
               name="betType"
@@ -116,11 +123,12 @@ function BetForm({
                 isLoading || remainingCards === 0 || isGameOver || balance <= 0
               }
             />
-          </label>
+            </label>
+            </section>
         </div>
 
         <div>
-          <h3>Choose Value</h3>
+          {betType && <h3 className="chooseValue">Choose Value</h3>}
           {betType === "color" && (
             <div>
               <label>
