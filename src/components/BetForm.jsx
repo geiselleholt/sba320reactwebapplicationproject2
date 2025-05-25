@@ -214,6 +214,7 @@ function BetForm({
           {betType === "suit" && (
             <div>
               {suits.map((suit) => (
+                <section className="suit">
                 <label key={suit}>{suit}
                   <input
                     type="radio"
@@ -234,8 +235,8 @@ function BetForm({
                       balance <= 0
                     }
                   />
-                  
-                </label>
+                  </label>
+                  </section>
               ))}
             </div>
           )}

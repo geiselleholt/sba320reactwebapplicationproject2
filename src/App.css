@@ -130,3 +130,8 @@ a {
   text-decoration: underline;
   margin-bottom: 0px;
 }
+
+.suit input {
+  font-size: 1rem;
+  margin: 10px;
+}

@@ -1,9 +1,8 @@
 function DisplayCard({ drawnCard }) {
   if (!drawnCard) {
     return null;
-    }
-    
-    
+  }
+
   return (
     <>
       <div className="drawnCardContainer">
@@ -12,7 +11,7 @@ function DisplayCard({ drawnCard }) {
           src={drawnCard.image}
           alt={`${drawnCard.value} of ${drawnCard.suit}`}
           className="cardImage"
-          height={300}
+          height={250}
         />
       </div>
     </>
