@@ -89,9 +89,9 @@ form input {
 .playContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 20px;
-  width: 60%;
+  width: 80%;
 }
 
 .rules {
